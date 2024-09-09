@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button 
+        defaultHref="/iniestudiante"
+        text=""
+        color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-title id="perUser" class="titulo">Perfil de Usuario</ion-title>
+  </ion-toolbar> 
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="titulo" style="text-align: center;">Información del Usuario</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked" class="titulo">Nombre</ion-label>
+        <ion-input [(ngModel)]="user.name" [readonly]="!isEditing"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked" class="titulo">Correo Electrónico</ion-label>
+        <ion-input [(ngModel)]="user.email" [readonly]="!isEditing" type="email"></ion-input>
+      </ion-item>
+
+      <!-- Contraseña (solo visible si está en modo edición) -->
+      <ion-item>
+        <ion-label position="stacked" class="titulo">Contraseña</ion-label>
+        <ion-input [(ngModel)]="user.password" [readonly]="!isEditing" [type]="passwordType" placeholder="********"></ion-input>
+        <ion-icon
+          [name]="passwordType === 'password' ? 'eye-off-outline' : 'eye-outline'"
+          slot="end"
+          (click)="togglePasswordVisibility()"
+        ></ion-icon>
+      </ion-item>
+
+      <!-- Confirmación de contraseña, solo aparece cuando estamos editando -->
+      <ion-item *ngIf="isEditing">
+        <ion-label position="stacked" class="titulo">Confirmar Contraseña</ion-label>
+        <ion-input [(ngModel)]="confirmPassword" type="password" placeholder="Repite la contraseña"></ion-input>
+      </ion-item>
+
+      <!-- Mensaje de error si las contraseñas no coinciden -->
+      <ion-text color="danger" *ngIf="isEditing && !passwordsMatch">
+        <p>Las contraseñas no coinciden</p>
+      </ion-text>
+
+      <!-- Botones -->
+      <ion-button expand="block" *ngIf="!isEditing" (click)="enableEditing()" class="boton">Editar</ion-button>
+      <ion-button expand="block" *ngIf="isEditing" [disabled]="!passwordsMatch" (click)="saveProfile()" class="boton">Guardar Cambios</ion-button>
+      <ion-button expand="block" *ngIf="isEditing" color="medium" (click)="cancelEditing()" class="boton">Cancelar</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
