@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button 
+        defaultHref="/login"
+        text=""
+        color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="titulo">EventDuoc</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="titulo">Crear Usuario</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <!-- Nombre -->
+        <ion-item>
+          <ion-input type="text" label="Nombre:" name="nombre" [(ngModel)]="nombre" labelPlacement="stacked" placeholder="Ingrese su nombre..." required></ion-input>
+        </ion-item>
+
+        <!-- Correo electrónico -->
+        <ion-item>
+          <ion-input type="email" label="Correo Electrónico:" name="email" [(ngModel)]="email" labelPlacement="stacked" placeholder="Ingrese su correo electrónico..." required></ion-input>
+        </ion-item>
+
+        <!-- Contraseña -->
+        <ion-item>
+          <ion-input type="password" label="Contraseña:" name="password" [(ngModel)]="password" labelPlacement="stacked" placeholder="Ingrese su contraseña..." required minlength="8"></ion-input>
+        </ion-item>
+
+        <!-- Confirmar Contraseña -->
+        <ion-item>
+          <ion-input type="password" label="Confirmar Contraseña:" name="confirmPassword" [(ngModel)]="confirmPassword" labelPlacement="stacked" placeholder="Confirme su contraseña..." required></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+
+    <!-- Botón de enviar -->
+    <div id="centrar">
+      <ion-button id="bcentrar" (click)="crearUsuario()" class="boton" fill="solid" shape="round">
+        Crear Usuario
+      </ion-button>
+    </div>
+  </ion-card>
+</ion-content>
+
