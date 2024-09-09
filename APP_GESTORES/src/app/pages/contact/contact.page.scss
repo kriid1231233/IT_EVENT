@@ -1,0 +1,28 @@
+#centrar {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .boton {
+    --background: #e4b312;
+    --background-hover: #9ce0be;
+    --background-activated: #dee4ab;
+    --background-focused: #c8de05;
+    --color: rgb(0, 0, 0);
+    --border-radius: 15px;
+    --border-color: #000;
+    --border-style: solid;
+  }
+
+  
+.titulo {
+  font-family: 'titulo', sans-serif;
+}
+
+.menucolor{
+  --color: #e4b312;
+}
+
+.texto {
+  font-family: 'texto', serif;
+}

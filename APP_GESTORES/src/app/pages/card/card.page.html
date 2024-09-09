@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button 
+        defaultHref="/"
+        text=""
+        color="dark"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="menucolor">EventDuoc</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card-header>
+    <ion-card-title class="titulo" style="text-align: center;">Registrar Evento!</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-input type="text" label="Título del Evento:" name="titulo" [(ngModel)]="titulo" labelPlacement="stacked" placeholder="Ingrese el título del evento..."></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-datetime displayFormat="MMM DD, YYYY HH:mm" label="Fecha y Hora:" name="fecha" [(ngModel)]="fecha" labelPlacement="stacked"></ion-datetime>
+      </ion-item>
+  
+      <ion-item>
+        <ion-input type="text" label="Lugar del Evento:" name="lugar" [(ngModel)]="lugar" labelPlacement="stacked" placeholder="Ingrese el lugar del evento..."></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-textarea label="Descripción:" name="descripcion" [(ngModel)]="descripcion" labelPlacement="stacked" placeholder="Describa el evento..."></ion-textarea>
+      </ion-item>
+  
+      <ion-item>
+        <ion-select label="Tipo de Evento:" name="tipo" [(ngModel)]="tipo" labelPlacement="stacked" placeholder="Seleccione el tipo de evento">
+          <ion-select-option value="conferencia">Conferencia</ion-select-option>
+          <ion-select-option value="taller">Taller</ion-select-option>
+          <ion-select-option value="seminario">Seminario</ion-select-option>
+          <ion-select-option value="webinar">Otro</ion-select-option>
+        </ion-select>
+      </ion-item>
+  
+      <ion-item>
+        <ion-input type="number" label="Capacidad Máxima:" name="capacidad" [(ngModel)]="capacidad" labelPlacement="stacked" placeholder="Ingrese la capacidad máxima de asistentes..."></ion-input>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+<div id="botongod">
+  <ion-button class="boton" shape="round" [routerLink]="['/inicio']">Confirmar</ion-button>
+</div>
+</ion-content>

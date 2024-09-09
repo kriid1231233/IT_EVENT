@@ -1,0 +1,96 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    
+    <ion-title class="menucolor">EventDuoc</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="titulo" style="text-align: center;">Editar Evento</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-select
+            label="Listado de Eventos:"
+            [(ngModel)]="tipo"
+            labelPlacement="stacked"
+            placeholder="Seleccione el Evento"
+          >
+            <ion-select-option value="evento1">Hackathon CITT</ion-select-option>
+            <ion-select-option value="evento2">Seminario de Tendencias</ion-select-option>
+            <ion-select-option value="evento3">Día de la Innovación</ion-select-option>
+            <ion-select-option value="evento4">Otro</ion-select-option>
+          </ion-select>
+        </ion-item>
+        
+        <!-- Campo para el título del evento -->
+        <ion-item>
+          <ion-input
+            type="text"
+            label="Editar Título del Evento:"
+            [(ngModel)]="titulo"
+            labelPlacement="stacked"
+            placeholder="Ingrese el título del evento..."
+          ></ion-input>
+        </ion-item>
+
+        <!-- Campo para la fecha del evento -->
+        <ion-item>
+          <ion-input
+            type="text"
+            label="Editar Fecha y Hora:"
+            [(ngModel)]="fecha"
+            labelPlacement="stacked"
+            placeholder="Ingrese la fecha y hora..."
+          ></ion-input>
+        </ion-item>
+
+        <!-- Campo para el lugar del evento -->
+        <ion-item>
+          <ion-input
+            type="text"
+            label="Editar Lugar del Evento:"
+            [(ngModel)]="lugar"
+            labelPlacement="stacked"
+            placeholder="Ingrese el lugar del evento..."
+          ></ion-input>
+        </ion-item>
+
+        <!-- Campo para la descripción del evento -->
+        <ion-item>
+          <ion-textarea
+            label="Editar Descripción:"
+            [(ngModel)]="descripcion"
+            labelPlacement="stacked"
+            placeholder="Describa el evento..."
+          ></ion-textarea>
+        </ion-item>
+
+        <!-- Campo para seleccionar el tipo de evento -->
+        
+
+        <!-- Campo para la capacidad máxima del evento -->
+        <ion-item>
+          <ion-input
+            type="text"
+            label="Editar Capacidad Máxima:"
+            [(ngModel)]="capacidad"
+            labelPlacement="stacked"
+            placeholder="Ingrese la capacidad máxima de asistentes..."
+          ></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+
+    <!-- Botones para guardar, eliminar y limpiar el formulario -->
+    <div id="centrar">
+      <ion-button class="boton" shape="round" [routerLink]="['/inicio']" (click)="guardarCambios()">Guardar Cambios</ion-button>
+      <ion-button class="boton" shape="round" [routerLink]="['/inicio']" (click)="eliminarEvento()">Eliminar Evento</ion-button>
+    </div>
+  </ion-card>
+</ion-content>
+
+

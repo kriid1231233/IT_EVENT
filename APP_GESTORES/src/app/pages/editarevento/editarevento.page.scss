@@ -1,0 +1,47 @@
+:host {
+    ion-header {
+      --background: #000;
+    }
+  
+    ion-toolbar {
+      --background: #000;
+    }
+  
+    ion-title.menucolor {
+      color: #e4b312;
+    }
+  }
+  
+  #botongod {
+    margin-top: 25px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  
+  .boton {
+    --background: #e4b312;
+    --background-hover: #9ce0be;
+    --background-activated: #dee4ab;
+    --background-focused: #c8de05;
+    --color: rgb(0, 0, 0);
+    --border-radius: 15px;
+    --border-color: #000;
+    --border-style: solid;
+}
+#centrar{
+  text-align: center;
+}
+.titulo {
+  font-family: 'titulo', sans-serif;
+}
+
+.menucolor{
+  --color: #e4b312;
+  font-family: 'titulo', serif;
+}
+
+.texto {
+  font-family: 'texto', serif;
+}
